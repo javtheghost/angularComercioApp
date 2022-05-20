@@ -20,18 +20,26 @@ export class LoginComponent implements OnInit {
   constructor( private api:ApiService, private router:Router) { }
 
   ngOnInit(): void {
+    this.checkLocalStorage
+  }
+
+
+  checkLocalStorage(){
+    if(localStorage.getItem('token')){
+      this.router.navigate(['home'])
+    }
   }
 
   onLogin(form: LoginI){
-    this.api.loginByEmail(form).subscribe(data =>{
-        console.log(data)
-        let dataResponse:ResponseI = data;
-        if(dataResponse){
-          localStorage.setItem('access_token', dataResponse.resToken);
-          this.router.navigate(['home']);
-        }
+    this.api.loginByEmail(form).subscribe((data) => {
+      console.log(data);
+      let dataResponse:ResponseI = data;
+      if (dataResponse.status == "ok"){//si me da de respuesta un ok
+        localStorage.setItem("token", dataResponse.token.token)//me guarda en el localstorage el token para ya no volver a pedirlo en más peticiones
+        this.router.navigate(['home']);
 
-    })
+      }
+    });
   }
 
 }
