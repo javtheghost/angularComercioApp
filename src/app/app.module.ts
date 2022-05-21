@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 
 import { HttpClientModule } from '@angular/common/http';
-import { HeaderComponent } from './views/home/header/header.component' //para la api
+import { HeaderComponent } from './views/home/header/header.component';
+import { ProvidersComponent } from './views/admin/providers/providers.component' //para la api
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponentes,
-    HeaderComponent
+    HeaderComponent,
+    ProvidersComponent
 
   ],
   imports: [
