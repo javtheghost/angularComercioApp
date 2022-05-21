@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { ApiService } from 'src/app/services/api/api.service';
-import { LoginI } from 'src/app/models/login.interface';
-import { ResponseI } from 'src/app/models/response.interface';
+import { LoginI } from 'src/app/models/Login.interface';
+import { ResponseI } from 'src/app/models/Response.interface';
 
 import { Router } from '@angular/router';
 @Component({
