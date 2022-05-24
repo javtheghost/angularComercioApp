@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { LoginI } from 'src/app/models/Login.interface';
-import { ResponseI } from 'src/app/models/Response.interface';
+import { LoginI } from 'src/app/models/login.interface';
+import { ResponseI } from 'src/app/models/response.interface';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { getProvidersI } from 'src/app/models/Provider.interface';
